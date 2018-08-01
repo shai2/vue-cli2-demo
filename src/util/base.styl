@@ -1,0 +1,88 @@
+// mixin
+$blue = #29a1f7
+$gray = #f9f9f9
+$gray2 = #9da2ae
+$orange = #fd6d4a
+
+extend-click()
+    position: relative
+    &:after
+        content: ''
+        position: absolute
+        top: -10px
+        left: -10px
+        right: -10px
+        bottom: -10px
+
+bor-bottom-1px()
+    position: relative
+    &:after
+        content: ''
+        position: absolute
+        left: 0
+        bottom: 0
+        width: 100%
+        height: 1px
+        background:#e9eef5
+        transform: scaleY(0.5)
+rightline()
+    position:relative
+    &:before
+        content: ''
+        display:block
+        position: absolute
+        right: 0px
+        top: 10px
+        width: 1px
+        height: 45px
+        background:#e9eef5
+bottomline()
+    position:relative
+    &:before
+        content: ''
+        display:block
+        position: absolute
+        right: 0px
+        bottom: -15px
+        width: 100%
+        height: 1px
+        background:#e9eef5
+// 动画
+.slide-up-enter,.slide-up-leave-to
+    transform:translate3d(0,100%,0)
+.slide-up-enter-active,.slide-up-leave-active
+    transition: all 0.3s ease
+
+.slide-left-enter,.slide-left-leave-to
+    transform:translate3d(-100%,0,0)
+.slide-left-enter-active,.slide-left-leave-active
+    transition: all 0.3s ease
+
+.slide-right-enter,.slide-right-leave-to
+    transform:translate3d(100%,0,0)
+.slide-right-enter-active,.slide-right-leave-active
+    transition: all 0.3s ease
+
+.slide-down-enter,.slide-down-leave-to
+    transform:translate3d(0,-100%,0)
+.slide-down-enter-active,.slide-down-leave-active
+    transition: all 0.3s ease
+
+.fade-enter-active, .fade-leave-active
+  transition: opacity 0.3s
+.fade-enter, .fade-leave-to
+  opacity: 0
+
+.slide-move-enter
+    transform:translate3d(100%,0,0)
+.slide-move-enter-active,.slide-move-leave-active
+    transition: all 0.3s ease
+.slide-move-leave-to
+    transform:translate3d(0,0,0)
+
+.slide-across-enter
+    transform:translate3d(100%,0,0)
+.slide-across-enter-active,.slide-across-leave-active
+    transition: all 0.3s ease
+.slide-across-leave-to
+    transform:translate3d(-100%,0,0)

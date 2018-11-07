@@ -7,6 +7,7 @@ img{width:100%;height:auto;}
 .flex{flex: 1 1;}
 .align-top{align-items:flex-start!important;}
 .align-bottom{align-items:flex-end!important;}
+.align-stretch{align-items:stretch!important;}
 .flex-row-center{display:flex;flex-direction:row;justify-content:center;align-items:center;}
 .flex-row-between{display:flex;flex-direction:row;justify-content:space-between;align-items:center;}
 .flex-row-around{display:flex;flex-direction:row;justify-content:space-around;align-items:center;}
@@ -14,6 +15,7 @@ img{width:100%;height:auto;}
 .flex-column-between{display:flex;flex-direction:column;justify-content:space-between;align-items:center;}
 .flex-column-around{display:flex;flex-direction:column;justify-content:space-around;align-items:center;}
 .full{width:100%;height:100%;overflow:auto;}
+.w0{width:0;}
 .w100{width:100%!important;}
 .h100{height:100%;}
 .mgtop0{margin-top:0!important;}
@@ -29,6 +31,7 @@ img{width:100%;height:auto;}
 .mgbt5{margin-bottom:5px!important;}
 .mgbt10{margin-bottom:10px!important;}
 .mgrt10{margin-right:10px!important;}
+.mglt10{margin-left:10px!important;}
 .pdbt0{padding-bottom:0px!important;}
 .pd15{padding:15px;}
 .ellipsis{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -40,6 +43,9 @@ img{width:100%;height:auto;}
 .overflow-s{overflow:auto;}
 .overflow-h{overflow:hidden;}
 .nowrap{white-space:nowrap;}
+.pointer{cursor:pointer;}
+.textalign-l{text-align:left;}
+.textalign-r{text-align:right;}
 .bor0{border-width:0;}
 .icon{width:10px;height:10px;}
 .p10{font-size:10px!important;}
@@ -50,7 +56,7 @@ img{width:100%;height:auto;}
 .fix-bottom{position:fixed;bottom:0;left:0;right:0;}
 .red{color:#ec5151!important;}
 .orange{color:#ff824b!important;}
-.green{color:#45c654!important;}
+.green{color:#67c23a!important;}
 .blue{color:#29a1f7!important;}
 .bg-gray{background-color:#f3f5f7;}
 .bg-fff{background-color:#fff;}
@@ -58,19 +64,27 @@ img{width:100%;height:auto;}
 button[plain]{border-width: 0;}
 input::-webkit-input-placeholder {color:#cbd4db;font-size:12px;}
 *[contenteditable="true"]:empty:before{content:attr(placeholder);color:#cbd4db;font-size:12px;}
+*:focus {outline: -webkit-focus-ring-color auto 0px!important;}
 /*------样式部分------ */
+.normal-border{border:1px solid #eee;padding:15px 20px;background:#fff;}
 .border-top{border-top:1px solid #e4e9f0;}
 .border-bottom{border-bottom:1px solid #e4e9f0;}
 .placeholder{color:#cbd4db;}
-.mybutton-box{background:#fff;position:fixed;bottom:0;left:0;right:0;padding:5px 15px;}
-.mybutton-sp{font-size:14px;color:#848a99;border:1px solid #29a1f7;background:#eef7fd;border-radius:100px;padding:8px 15px;display:inline-block;}
-.mybutton-rect{font-size:12px;color:#909ba3;background:#eef7fd;border-radius:2px;padding:4px 9px;margin:0 10px 10px 0;display:inline-block;}
-.loading-text{font-size:14px;color:#909ba3;display:block;text-align:center;padding:20px 0;}
-.hide-1px{position:relative;top:-1px;}
-/* ----覆盖vantUI---- */
-.van-button--primary{background-color:#29a1f7!important;border: 1px solid #29a1f7!important;cursor:pointer;}
-.van-button--disabled{color:#fff!important;opacity:0.3;}
-.van-list{width:100%;}
-.myshadowbg{background:rgba(0,0,0,0.3);}
-.my-van-pop{background:rgba(0,0,0,0)!important;}
-button[disabled]{color:#fff!important;background:#E4E9F0!important;border:1px solid #E4E9F0!important;opacity:1;cursor:default;}
+.select-label{line-height:36px;margin-right:5px;}
+.border-green{border-color:#67c23a!important;}
+.w200{width:200px!important;}
+.loading-blank{min-height:200px;margin-bottom:10px;}
+/* ----覆盖elementUI---- */
+.el-date-editor{margin-bottom:10px;}
+.el-table--medium td{padding:5px 0;}
+.el-date-editor.el-input{width:190px;}
+.el-tabs{height:100%;display:flex;flex-direction:column;}
+.el-tabs__content{overflow:auto;}
+.event-item{background-color:#ccc!important;color:#fff!important;text-align:center;padding:0!important;pointer-events:none;}
+.filter-item.el-input,.el-select.filter-item{width:120px;}
+.events-day .event-box{max-height:58px;overflow:hidden;}
+.work{background-color:#409EFF!important;}
+.rest{background-color:#67c23a!important;}
+.events-day .event-box .event-item:nth-child(2){background-color:#ff6567!important;}
+.events-day .event-box .event-item:nth-child(3){background-color:#9689ee!important;}
+.el-button.is-plain.focus {color: #fff;background:#409EFF;border-color: #409EFF;}

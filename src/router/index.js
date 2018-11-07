@@ -2,6 +2,13 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 Vue.use(Router)
+
+// 第一页
+const login = (resolve) =>{
+    import('components/login/login').then((module)=>{
+        resolve(module)
+    })
+}
 //404页--------------------------
 const noWeb = (resolve) =>{
     import('components/noWeb').then((module)=>{
@@ -11,13 +18,17 @@ const noWeb = (resolve) =>{
 export default new Router({
     routes: [
         {
-            path: '*',
-            component: noWeb
+            path: '/login',
+            component: login
         },
         {
             path: '/',
-            redirect:'/register'
-        }
+            redirect:'/login'
+        },
+        {
+            path: '*',
+            component: noWeb
+        },
     ]
 })
 

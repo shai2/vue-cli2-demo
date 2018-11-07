@@ -3,7 +3,7 @@
 	<div class="full">
         <div class="login-top">
             <Header></Header>
-            <img src="../../assets/img/banner-00.png">
+            <!-- <img src="../../assets/img/banner-00.png"> -->
         </div>
         <div class="login-middle">
             <van-field class="my-input" v-model="telNumber" placeholder="请输入手机号" />
@@ -22,6 +22,7 @@ import storage from 'good-storage'
 import Vue from 'vue'
 import api from 'api/api.js';
 import { Toast } from 'vant';
+import axios from 'util/require.js'
 export default {
     data(){
         return{
@@ -44,7 +45,7 @@ export default {
                 return
             }
             if(!this.canSendCode) return
-            this.$ajax.get(api.sendVerifyCode,{params:{"mobile": this.telNumber}}).then(res=>{
+            axios.get(api.sendVerifyCode,{params:{"mobile": this.telNumber}}).then(res=>{
                 console.log(res.data)   
                 if(res.data.code===0){
                     this.canSendCode = false
@@ -67,7 +68,7 @@ export default {
             })
         },
         login(){
-            this.$ajax.post(api.codeLogin,{
+            axios.post(api.codeLogin,{
                     'mobile':this.telNumber,
                     'code':this.code,
                     'inviteCode':this.$route.query.inviteCode,
@@ -78,7 +79,7 @@ export default {
                     storage.set('userPhone', this.telNumber) //手机号 登录成功记录下来
                     storage.set('sessionId', res.data.data.sessionId) //token 全局请求
                     storage.set('jobIntentionFlag', res.data.data.jobIntentionFlag) //是否有意向（是否弹窗） 1是需要弹窗 0是不需要
-                    this.$ajax.defaults.headers = {'sessionId':storage.get('sessionId','')} //axios加全局sessionId
+                    this.axios.defaults.headers = {'sessionId':storage.get('sessionId','')} //axios加全局sessionId
                     this.$router.push('/job')
                 }else{
                     this.$Toast(res,'验证码登录')
